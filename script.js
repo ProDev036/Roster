@@ -22,14 +22,22 @@ console.log(months_array)
 //Defining Empty array and utilizing nested loop to get nested array of dutiees, later replasing nnummbers,
 
 let duty1= new Array(total_months);
-reference1=1;
-
+let reference1=1;
+let retraning=0;
 for(let i=0;i<=total_months-1;i++){
-    duty1[i]=new Array(months_array[i]);
-    for(let j=0;j<=months_array[i]-1;j++){
-        duty1[i][j]=reference1;
-        reference1++;
+    if(retraning==i){
+        duty1[i]='Retraning';
+        retraning=retraning+6;
     }
+    else{
+        duty1[i]=new Array(months_array[i]);
+        for(let j=0;j<=months_array[i]-1;j++){
+            duty1[i][j]=reference1;
+            reference1++;
+            if(reference1==26){reference1=1;}
+        }
+    }
+
 }
 
-console.log(duty1[0]);
+console.log(duty1);
