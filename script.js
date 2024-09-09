@@ -48,23 +48,45 @@ console.log(duty1);
 //7,8,9,10,11 for M
 //6,12,13,19,20,21,22,23,24,25 for R
 
-//using array.map feature
+//using array.map feature, didn't work, trying for loop
 
 
-let final_dut1=duty1.map(item =>{ 
-    if(item===1 || item===2 || item===3 || item===14 || item===15){
-        return 'N';
-    }
-    else if(item===4 || item===5 || item===16 || item===17 || item===18){
-        return 'E';
-    }
-    else if (item===7 || item===8 || item===9 || item===10 || item===11){
-        return 'M'
-    }
-    else if (item===6 || item===12 || item===13 || item===19 || item===20 || item===21 || item===22 || item===23 || item==24 || item===25){
-        return 'R'
-    }
-    return item;
-}
+// let final_duty1=duty1.map(item =>{ 
+//     if(item===1 || item===2 || item===3 || item===14 || item===15){
+//         return 'N';
+//     }
+//     else if(item===4 || item===5 || item===16 || item===17 || item===18){
+//         return 'E';
+//     }
+//     else if (item===7 || item===8 || item===9 || item===10 || item===11){
+//         return 'M';
+//     }
+//     else if (item===6 || item===12 || item===13 || item===19 || item===20 || item===21 || item===22 || item===23 || item==24 || item===25){
+//         return 'R';
+//     }
+//     return item;
+// }
 
-)
+// )
+
+let final_duty1= duty1;
+
+for(let i=0;i<=total_months-1;i++){
+  
+        for(let j=0;j<=months_array[i]-1;j++){
+            if(final_duty1[i][j]==1 || final_duty1[i][j]==2 || final_duty1[i][j]==3 || final_duty1[i][j]==14 || final_duty1[i][j]==15){
+                        final_duty1[i][j]= 'N';
+                    }
+                    else if(final_duty1[i][j]==4 || final_duty1[i][j]==5 || final_duty1[i][j]==16 || final_duty1[i][j]==17 || final_duty1[i][j]==18){
+                       final_duty1[i][j]= 'E';
+                    }
+                    else if (final_duty1[i][j]==7 || final_duty1[i][j]==8 || final_duty1[i][j]==9 || final_duty1[i][j]==10 || final_duty1[i][j]==11){
+                        final_duty1[i][j]= 'M';
+                    }
+                    else if (final_duty1[i][j]==6 || final_duty1[i][j]==12 || final_duty1[i][j]==13 || final_duty1[i][j]==19 || final_duty1[i][j]==20 || final_duty1[i][j]==21 || final_duty1[i][j]==22 || final_duty1[i][j]==23 || final_duty1[i][j]==24 || final_duty1[i][j]==25){
+                        final_duty1[i][j]= 'R';
+                    }
+        }
+    }
+
+    // function roster(months_array)
